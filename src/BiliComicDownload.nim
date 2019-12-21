@@ -51,20 +51,6 @@ when isMainModule:
 
 
 proc getInf(): bool =
-  #[
-  echo "Please input your username:"
-  userName = readLine(stdin)
-  echo "Please input your password:"
-  passWd = readLine(stdin)
-  echo "Please input the url of BiliComicWebReader, enter 'h' for help"
-  apiUrl = readLine(stdin)
-  if apiUrl == "h":
-    echo "https://gist.github.com/esterTion/292e27b97884dfa58542308dd896ce38"
-    echo "Because I'm to lazy to build a wheel, so a server with this is needed"
-    return false 
-  else:
-    return true
-  ]#
   echo "输入你的SESSDATA:（用浏览器登录后F12看Cookie）"
   sessdata = readLine(stdin)
   return true
