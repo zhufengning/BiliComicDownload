@@ -12,3 +12,4 @@ bin           = @["BiliComicDownload"]
 # Dependencies
 
 requires "nim >= 1.0.4"
+requires "nim_miniz"

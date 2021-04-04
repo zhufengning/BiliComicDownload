@@ -104,7 +104,7 @@ proc downEp(epId: JsonNode): bool =
     return false
   path = downDir & replace($epId["short_title"] & "-" & $epId["title"], "\"", "") & "/"
   # echo path
-  if existsDir(path) == false:
+  if dirExists(path) == false:
     createDir(path)
   
   downloadFile(client, replace($epId["cover"], "\"", ""), path & "0 Cover.jpg")
@@ -156,7 +156,7 @@ proc downEp(epId: JsonNode): bool =
       var cnt = 0
       for k in pics:
         cnt += 1
-        bd = """{"urls":"[\"""" & replace($k, "\"", "") & """\"]"}'"""
+        bd = """{"urls":"[\"""" & replace($k, "\"", "") & "@1100w.jpg" & """\"]"}"""
         let res = client.request(api_imgToken, httpMethod = HttpPost, body = bd)
         if res.status != "200 OK":
           echo "请求失败：", res.status
